@@ -29,7 +29,10 @@ class Stopwatch {
   
   var elapsedTimeAsString: String {
     // return the formatted string...
-    return String(elapsedTime)
+    let diffMin = Int(elapsedTime/60)
+    let diffSec = Int(elapsedTime.truncatingRemainder(dividingBy: 60 ))
+    let diffFracSec = Int((elapsedTime * 10).truncatingRemainder(dividingBy: 10))
+    return String(format: "%02d:%02d.%01d",diffMin,diffSec,diffFracSec)
   }
   
   
